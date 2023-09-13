@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="BorderPane" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pdfcomparisonfx.PDFCompareController">
+   <center>
+      <AnchorPane>
+         <children>
+            <BorderPane fx:id="BoarderPane1" prefHeight="420.0" prefWidth="764.3333333333334" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <center>
+                    <VBox alignment="CENTER" fillWidth="false" onDragDropped="#onDragDropped" onDragOver="#onDragOver" prefHeight="366.0" prefWidth="471.0" spacing="10.0">
+                        <Label text="Drag-Drop Here files for comparison" textFill="#22c943" />
+                        <Label fx:id="dropFileConf" onDragDetected="#onDragDropped" textFill="#104beb" />
+                        <Button mnemonicParsing="false" onAction="#onCompareHLButtonClick" text="CompareHL" textAlignment="CENTER" textFill="#2cd01a" wrapText="true">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Button>
+                        <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#onCompareDCButtonClick" text="CompareDC" textFill="#2cd01a">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Button>
+                        <Text fill="#dd1b1b" strokeType="OUTSIDE" strokeWidth="0.0" text="Write new master Type (e.g: Type01, Type02, etc.):" />
+                        <TextField fx:id="InputTipEmboss" />
+                        <Button mnemonicParsing="false" onAction="#onAddToMasterDoc" text="Add new HL type" textFill="#f20808" />
+                        <Button mnemonicParsing="false" onAction="#onAddToMasterDCDoc" text="Add new DC type" textFill="#f20808" />
+                        <Button cancelButton="true" mnemonicParsing="false" onAction="#onDisplayButton" text="Open Windows app" textAlignment="CENTER" textOverrun="CLIP" />
+                        <padding>
+                            <Insets bottom="10.0" top="10.0" />
+                        </padding>
+                        <BorderPane.margin>
+                            <Insets bottom="10.0" top="10.0" />
+                        </BorderPane.margin>
+                    </VBox>
+                </center>
+                <padding>
+                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                </padding>
+                <left>
+                    <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                        <children>
+                            <Label text="HL Type List" />
+                            <ListView fx:id="ListMasterTypeHL" prefHeight="369.0" prefWidth="235.0" />
+                        <Button mnemonicParsing="false" onAction="#onDeleteHLbutton" text="Remove HL" />
+                        </children>
+                    </VBox>
+                </left>
+                <right>
+                    <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                        <children>
+                            <Label text="DC Type List" />
+                            <ListView fx:id="ListMasterTypeDC" prefHeight="369.0" prefWidth="211.0" />
+                        <Button mnemonicParsing="false" onAction="#onDeleteDCbutton" text="Remove DC" />
+                        </children>
+                    </VBox>
+                </right>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
